@@ -19,21 +19,9 @@ import Drawer from "@material-ui/core/Drawer";
 import Divider from "@material-ui/core/Divider";
 import Container from "@material-ui/core/Container";
 
-const getRoutes = (_route: any) => {
-  return _route.map(
-    (
-      prop: {
-        collapse: any;
-        views: any;
-        layout: string;
-        path: any;
-        component: any;
-      },
-      key: any
-    ) => {
-      if (prop.collapse) {
-        return getRoutes(prop.views);
-      }
+const switchRoutes = (
+  <Switch>
+    {AmagRoutes.map((prop, key) => {
       if (prop.layout === "/admin") {
         return (
           <Route
@@ -43,9 +31,10 @@ const getRoutes = (_route: any) => {
           />
         );
       }
-    }
-  );
-};
+    })}
+    <Redirect from="/admin" to="/admin/locations" />
+  </Switch>
+);
 
 const Admin: React.FC = () => {
   const classes = useStyles();
@@ -119,16 +108,8 @@ const Admin: React.FC = () => {
         >
           <div className={classes.drawerHeader} />
 
-          <Switch>
-              {
-                <div>
-                  <Switch>
-                    {getRoutes(AmagRoutes)}
-                    <Redirect from="/admin" to="/admin/dashboard" />
-                  </Switch>
-                </div>
-              }
-            </Switch>
+          {switchRoutes}
+          
         </main>
       </div>
     </div>
