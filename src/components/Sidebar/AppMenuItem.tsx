@@ -47,7 +47,7 @@ const AppMenuItem: React.FC<AppMenuItemProps> = props => {
       {/* Display an icon if any */}
       {!!Icon && (
         <ListItemIcon className={classes.menuItemIcon}>
-          <Icon />
+          <Icon/>
         </ListItemIcon>
       )}
       <ListItemText primary={name} inset={!Icon} />
@@ -79,15 +79,21 @@ const useStyles = makeStyles(theme =>
   createStyles({
     menuItem: {
       '&.active': {
-        background: 'rgba(0, 0, 0, 0.08)',
-        '& .MuiListItemIcon-root': {
-          color: '#fff',
-        },
+        backgroundColor: '#f6156b',
+        boxShadow: "0 1px 4px 0 rgb(162, 162, 162)",
       },
+      paddingTop: '4px',
+      paddingBottom: '4px',
     },
     menuItemIcon: {
-      color: '#97c05c',
+      color: '#f5156b',
+      minWidth: 'unset',
+      marginRight: 10
     },
+    childMenu: {
+      paddingTop: '4px',
+      paddingBottom: '4px'
+    }
   }),
 )
 

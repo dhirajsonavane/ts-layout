@@ -12,61 +12,6 @@ import IconLibraryBooks from "@material-ui/icons/LibraryBooks";
 import AppMenuItem from "./AppMenuItem";
 import DrmRoutes from "../../drm-routes";
 
-const appMenuItems = [
-  {
-    name: "Site Data Input",
-    Icon: IconDashboard,
-    items: [
-      {
-        name: "Locations",
-        link: "/admin/locations",
-      },
-      {
-        name: "Add Locations",
-        link: "/admin/locations",
-      },
-    ],
-  },
-  {
-    name: "Login",
-    link: "/auth/login",
-    Icon: IconShoppingCart,
-  },
-  {
-    name: "Register",
-    link: "/auth/login",
-    Icon: IconPeople,
-  },
-  {
-    name: "Reports",
-    link: "/reports",
-    Icon: IconBarChart,
-  },
-  {
-    name: "Nested Pages",
-    Icon: IconLibraryBooks,
-    items: [
-      {
-        name: "Level 2",
-        link: "/orders",
-      },
-      {
-        name: "Level 2",
-        items: [
-          {
-            name: "Level 3",
-            link: "/reports",
-          },
-          {
-            name: "Level 3",
-            link: "/",
-          },
-        ],
-      },
-    ],
-  },
-];
-
 const AppMenu: React.FC = () => {
   const classes = useStyles();
 
@@ -87,6 +32,8 @@ const useStyles = makeStyles((theme) =>
   createStyles({
     appMenu: {
       width: "100%",
+      color: '#fff',
+      paddingTop: '20px'
     },
     navList: {
       width: drawerWidth,

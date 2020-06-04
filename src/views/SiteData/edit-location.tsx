@@ -5,7 +5,7 @@ const EditLocation: React.FC = () => {
   return (
     <div>
       <Typography variant="h3" component="h1">
-          Edit Location
+          Add Location
       </Typography>
     </div>
   );

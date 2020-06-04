@@ -3,6 +3,12 @@ import Login from "./views/Auth/Login";
 import Register from "./views/Auth/Register";
 
 import DashboardIcon from "@material-ui/icons/Dashboard";
+import PlaceIcon from "@material-ui/icons/Place";
+import AnalyticsIcon from "@material-ui/icons/BarChart";
+import TrendingUpIcon from "@material-ui/icons/TrendingUp";
+import ScatterPlotIcon from "@material-ui/icons/ScatterPlot";
+import PanToolIcon from "@material-ui/icons/PanToolRounded";
+
 import Dashboard from "./views/Dashboard/Dashboard";
 import EditLocation from "./views/SiteData/edit-location";
 import Flows from "./views/Data/Flows";
@@ -27,7 +33,7 @@ const DrmRoutes = [
     collapse: true,
     name: "SiteDataInput",
     rtlName: "صفحات",
-    Icon: DashboardIcon,
+    Icon: PlaceIcon,
     state: "SiteDataInputCollapse",
     views: [
       {
@@ -42,7 +48,7 @@ const DrmRoutes = [
       },
       {
         path: "/location",
-        name: "Location",
+        name: "Add Location",
         rtlName: "صودعم رتل",
         mini: "RS",
         rtlMini: "صو",
@@ -64,7 +70,7 @@ const DrmRoutes = [
     collapse: true,
     name: "Data",
     rtlName: "صفحات",
-    Icon: DashboardIcon,
+    Icon: AnalyticsIcon,
     state: "DataCollapse",
     views: [
       {
@@ -100,7 +106,7 @@ const DrmRoutes = [
     collapse: true,
     name: "Visualizations",
     rtlName: "صفحات",
-    Icon: DashboardIcon,
+    Icon: TrendingUpIcon,
     state: "VisualizationsCollapse",
     views: [
       {
@@ -136,7 +142,7 @@ const DrmRoutes = [
     collapse: true,
     name: "Forecasts",
     rtlName: "صفحات",
-    Icon: DashboardIcon,
+    Icon: ScatterPlotIcon,
     state: "ForecastsCollapse",
     views: [
       {
@@ -154,7 +160,7 @@ const DrmRoutes = [
     path: "/countermeasures",
     name: "Countermeasures",
     rtlName: "لوحة القيادة",
-    Icon: DashboardIcon,
+    Icon: PanToolIcon,
     component: Countermeasures,
     layout: "/admin"
   }
