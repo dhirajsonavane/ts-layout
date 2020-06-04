@@ -19,7 +19,7 @@ const DrmRoutes = [
     path: "/dashboard",
     name: "Dashboard",
     rtlName: "لوحة القيادة",
-    icon: DashboardIcon,
+    Icon: DashboardIcon,
     component: Dashboard,
     layout: "/admin"
   },
@@ -27,7 +27,7 @@ const DrmRoutes = [
     collapse: true,
     name: "SiteDataInput",
     rtlName: "صفحات",
-    icon: Image,
+    Icon: DashboardIcon,
     state: "SiteDataInputCollapse",
     views: [
       {
@@ -37,7 +37,8 @@ const DrmRoutes = [
         mini: "PP",
         rtlMini: "ع",
         component: EditLocation,
-        layout: "/admin"
+        layout: "/admin",
+        invisible: true,
       },
       {
         path: "/location",
@@ -63,7 +64,7 @@ const DrmRoutes = [
     collapse: true,
     name: "Data",
     rtlName: "صفحات",
-    icon: Image,
+    Icon: DashboardIcon,
     state: "DataCollapse",
     views: [
       {
@@ -99,7 +100,7 @@ const DrmRoutes = [
     collapse: true,
     name: "Visualizations",
     rtlName: "صفحات",
-    icon: Image,
+    Icon: DashboardIcon,
     state: "VisualizationsCollapse",
     views: [
       {
@@ -135,7 +136,7 @@ const DrmRoutes = [
     collapse: true,
     name: "Forecasts",
     rtlName: "صفحات",
-    icon: Image,
+    Icon: DashboardIcon,
     state: "ForecastsCollapse",
     views: [
       {
@@ -153,7 +154,7 @@ const DrmRoutes = [
     path: "/countermeasures",
     name: "Countermeasures",
     rtlName: "لوحة القيادة",
-    icon: DashboardIcon,
+    Icon: DashboardIcon,
     component: Countermeasures,
     layout: "/admin"
   }

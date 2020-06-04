@@ -22,20 +22,18 @@ export const AppMenuItemPropTypes = {
   path: PropTypes.string,
   Icon: PropTypes.elementType,
   views: PropTypes.array,
+  invisible: PropTypes.bool
 }
 
-// TypeScript compile-time props type, infered from propTypes
-// https://dev.to/busypeoples/notes-on-typescript-inferring-react-proptypes-1g88
 type AppMenuItemPropTypes = PropTypes.InferProps<typeof AppMenuItemPropTypes>
 type AppMenuItemPropsWithoutItems = Omit<AppMenuItemPropTypes, 'views'>
 
-// Improve child items declaration
 export type AppMenuItemProps = AppMenuItemPropsWithoutItems & {
   views?: AppMenuItemProps[]
 }
 
 const AppMenuItem: React.FC<AppMenuItemProps> = props => {
-  const { name, layout, path, Icon, views = [] } = props
+  const { name, layout, path, Icon, invisible, views = [] } = props
   const classes = useStyles()
   const isExpandable = views && views.length > 0
   const [open, setOpen] = React.useState(true)
@@ -45,7 +43,7 @@ const AppMenuItem: React.FC<AppMenuItemProps> = props => {
   }
 
   const MenuItemRoot = (
-    <AppMenuItemComponent className={classes.menuItem} layout={layout} path={path} onClick={handleClick}>
+    <AppMenuItemComponent className={classes.menuItem} invisible={invisible} layout={layout} path={path} onClick={handleClick}>
       {/* Display an icon if any */}
       {!!Icon && (
         <ListItemIcon className={classes.menuItemIcon}>
@@ -60,9 +58,11 @@ const AppMenuItem: React.FC<AppMenuItemProps> = props => {
   const MenuItemChildren = isExpandable ? (
     <div>
       <List component="div">
-        {views.map((views, index) => (
-          <AppMenuItem {...views} key={index} />
-        ))}
+        {
+          views.map((view, index) => (
+            <AppMenuItem {...view} key={index} />
+          ))
+        }
       </List>
     </div>
   ) : null

@@ -5,12 +5,17 @@ import { NavLink, NavLinkProps } from 'react-router-dom'
 export interface AppMenuItemComponentProps {
   className?: string
   layout?: string | null
-  path?: string | null // because the InferProps props allows alows null value
+  path?: string | null,
+  invisible?:boolean|null,
   onClick?: (event: React.MouseEvent<HTMLElement>) => void
 }
 
 const AppMenuItemComponent: React.FC<AppMenuItemComponentProps> = props => {
-  const { className, onClick, layout, path, children } = props
+  const { className, onClick, layout, path, invisible, children } = props
+
+  if(invisible) {
+    return null;
+  }
 
   // If link is not set return the orinary ListItem
   if (!path || typeof path !== 'string') {
