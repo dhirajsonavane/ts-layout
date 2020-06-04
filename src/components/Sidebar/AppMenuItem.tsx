@@ -18,25 +18,26 @@ import AppMenuItemComponent from './AppMenuItemComponent'
 // React runtime PropTypes
 export const AppMenuItemPropTypes = {
   name: PropTypes.string.isRequired,
-  link: PropTypes.string,
+  layout: PropTypes.string,
+  path: PropTypes.string,
   Icon: PropTypes.elementType,
-  items: PropTypes.array,
+  views: PropTypes.array,
 }
 
 // TypeScript compile-time props type, infered from propTypes
 // https://dev.to/busypeoples/notes-on-typescript-inferring-react-proptypes-1g88
 type AppMenuItemPropTypes = PropTypes.InferProps<typeof AppMenuItemPropTypes>
-type AppMenuItemPropsWithoutItems = Omit<AppMenuItemPropTypes, 'items'>
+type AppMenuItemPropsWithoutItems = Omit<AppMenuItemPropTypes, 'views'>
 
 // Improve child items declaration
 export type AppMenuItemProps = AppMenuItemPropsWithoutItems & {
-  items?: AppMenuItemProps[]
+  views?: AppMenuItemProps[]
 }
 
 const AppMenuItem: React.FC<AppMenuItemProps> = props => {
-  const { name, link, Icon, items = [] } = props
+  const { name, layout, path, Icon, views = [] } = props
   const classes = useStyles()
-  const isExpandable = items && items.length > 0
+  const isExpandable = views && views.length > 0
   const [open, setOpen] = React.useState(true)
 
   function handleClick() {
@@ -44,7 +45,7 @@ const AppMenuItem: React.FC<AppMenuItemProps> = props => {
   }
 
   const MenuItemRoot = (
-    <AppMenuItemComponent className={classes.menuItem} link={link} onClick={handleClick}>
+    <AppMenuItemComponent className={classes.menuItem} layout={layout} path={path} onClick={handleClick}>
       {/* Display an icon if any */}
       {!!Icon && (
         <ListItemIcon className={classes.menuItemIcon}>
@@ -52,14 +53,15 @@ const AppMenuItem: React.FC<AppMenuItemProps> = props => {
         </ListItemIcon>
       )}
       <ListItemText primary={name} inset={!Icon} />
+
     </AppMenuItemComponent>
   )
 
   const MenuItemChildren = isExpandable ? (
     <div>
       <List component="div">
-        {items.map((item, index) => (
-          <AppMenuItem {...item} key={index} />
+        {views.map((views, index) => (
+          <AppMenuItem {...views} key={index} />
         ))}
       </List>
     </div>

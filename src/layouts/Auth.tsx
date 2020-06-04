@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Switch, Redirect, Link } from 'react-router-dom';
-import AmagRoutes from '../amag-routes';
+import DrmRoutes from '../drm-routes';
 
 const getRoutes = (_route: any)=> {
     return _route.map((prop: { collapse: any; views: any; layout: string; path: any; component: any; }, key: any) => {
@@ -29,7 +29,7 @@ const Auth: React.FC = () => {
            {
                <div>
                   <Switch>
-                      {getRoutes(AmagRoutes)}
+                      {getRoutes(DrmRoutes)}
                       <Redirect from="/auth" to="/auth/login" />
                   </Switch>
              </div>

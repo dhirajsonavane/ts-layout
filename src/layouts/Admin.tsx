@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch, Redirect, Link } from "react-router-dom";
-import AmagRoutes from "../amag-routes";
+import DrmRoutes from "../drm-routes";
 import AppMenu from "../components/Sidebar/AppMenu";
 import {
   makeStyles,
@@ -17,24 +17,27 @@ import MenuIcon from "@material-ui/icons/Menu";
 import Typography from "@material-ui/core/Typography";
 import Drawer from "@material-ui/core/Drawer";
 import Divider from "@material-ui/core/Divider";
-import Container from "@material-ui/core/Container";
+import Leftbar from "../components/leftbar";
+import logo from 'public/logo192.png';
 
-const switchRoutes = (
-  <Switch>
-    {AmagRoutes.map((prop, key) => {
-      if (prop.layout === "/admin") {
-        return (
-          <Route
-            path={prop.layout + prop.path}
-            component={prop.component}
-            key={key}
-          />
-        );
-      }
-    })}
-    <Redirect from="/admin" to="/admin/locations" />
-  </Switch>
-);
+function getRoutes(_routes: any) {
+  return _routes.map((prop: { collapse: any; views: any; layout: string; path: any; component: any; }, key: any) => {
+    if (prop.collapse) {
+      return getRoutes(prop.views);
+    }
+    if (prop.layout === "/admin") {
+      return (
+        <Route
+          path={prop.layout + prop.path}
+          component={prop.component}
+          key={key}
+        />
+      );
+    } else {
+      return null;
+    }
+  });
+}
 
 const Admin: React.FC = () => {
   const classes = useStyles();
@@ -108,7 +111,12 @@ const Admin: React.FC = () => {
         >
           <div className={classes.drawerHeader} />
 
-          {switchRoutes}
+          {
+            <Switch>
+            {getRoutes(DrmRoutes)}
+            <Redirect from="/admin" to="/admin/dashboard" />
+            </Switch>
+          }
           
         </main>
       </div>

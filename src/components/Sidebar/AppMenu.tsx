@@ -10,6 +10,7 @@ import IconBarChart from "@material-ui/icons/BarChart";
 import IconLibraryBooks from "@material-ui/icons/LibraryBooks";
 
 import AppMenuItem from "./AppMenuItem";
+import DrmRoutes from "../../drm-routes";
 
 const appMenuItems = [
   {
@@ -71,10 +72,11 @@ const AppMenu: React.FC = () => {
 
   return (
     <List component="nav" className={classes.appMenu} disablePadding>
-      {/* <AppMenuItem {...appMenuItems[0]} /> */}
-      {appMenuItems.map((item, index) => (
-        <AppMenuItem {...item} key={index} />
-      ))}
+      {
+        DrmRoutes.map((item, index) => (
+          <AppMenuItem {...item} key={index} />
+        ))
+      }
     </List>
   );
 };
