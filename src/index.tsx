@@ -6,7 +6,6 @@ import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 import Admin from "./layouts/Admin";
 import Auth from "./layouts/Auth";
-import App from "./layouts/App";
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
 import { ThemeProvider } from "@material-ui/core/styles";
 

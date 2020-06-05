@@ -113,10 +113,6 @@ const Admin: React.FC = () => {
             >
               <MenuIcon />
             </IconButton>
-
-            <Typography variant="h6" noWrap>
-              Advance Mobility Analytics
-            </Typography>
           </Toolbar>
         </AppBar>
 
@@ -174,6 +170,7 @@ const useStyles = makeStyles((theme: Theme) =>
     drawerPaper: {
       width: drawerWidth,
       backgroundColor: sideBarBackgroundColor,
+      position: 'fixed'
     },
     drawerHeader: {
       display: "flex",
@@ -183,6 +180,7 @@ const useStyles = makeStyles((theme: Theme) =>
       ...theme.mixins.toolbar,
       justifyContent: "flex-start",
       borderBottom: "1px solid #404046",
+      height: 65,
     },
     content: {
       flexGrow: 1,
@@ -202,8 +200,7 @@ const useStyles = makeStyles((theme: Theme) =>
       marginLeft: 0,
     },
     logo: {
-      width: '210px',
-      padding: 5,
+      width: '100%',
     }
   })
 );

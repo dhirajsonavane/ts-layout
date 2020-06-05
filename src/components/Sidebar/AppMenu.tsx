@@ -3,12 +3,6 @@ import { makeStyles, createStyles } from "@material-ui/core/styles";
 
 import List from "@material-ui/core/List";
 
-import IconDashboard from "@material-ui/icons/Dashboard";
-import IconShoppingCart from "@material-ui/icons/ShoppingCart";
-import IconPeople from "@material-ui/icons/People";
-import IconBarChart from "@material-ui/icons/BarChart";
-import IconLibraryBooks from "@material-ui/icons/LibraryBooks";
-
 import AppMenuItem from "./AppMenuItem";
 import DrmRoutes from "../../drm-routes";
 
@@ -34,15 +28,6 @@ const useStyles = makeStyles((theme) =>
       width: "100%",
       color: '#fff',
       paddingTop: '20px'
-    },
-    navList: {
-      width: drawerWidth,
-    },
-    menuItem: {
-      width: drawerWidth,
-    },
-    menuItemIcon: {
-      color: "#97c05c",
     },
   })
 );
