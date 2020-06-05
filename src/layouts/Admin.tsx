@@ -17,6 +17,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import Typography from "@material-ui/core/Typography";
 import Drawer from "@material-ui/core/Drawer";
 import Divider from "@material-ui/core/Divider";
+import logo from '../assets/img/logo.png';
 
 function getRoutes(_routes: any) {
   return _routes.map(
@@ -76,7 +77,7 @@ const Admin: React.FC = () => {
           <div className={classes.drawerHeader}>
             <a href="javascript:void(0)">
               <img className={classes.logo}
-                src="https://amagroup.io/wp-content/uploads/2019/11/Asset-2AMA-1024x251.png"
+                src={logo}
                 alt="logo"
               />
             </a>
