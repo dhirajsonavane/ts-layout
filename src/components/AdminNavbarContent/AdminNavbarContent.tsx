@@ -8,16 +8,17 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import DraftsIcon from '@material-ui/icons/Drafts';
 import SendIcon from '@material-ui/icons/Send';
+import UserNavbarContent from "./UserNavbarContent";
 
-interface Props {
+interface AdminNavbarContentProps {
     userName: string
 }
 
-const AdminNavbarContent: React.FC<Props> = props => {
+const AdminNavbarContent: React.FC<AdminNavbarContentProps> = adminNavbarContentProps => {
     return (
-        <div>
-            {props.userName}
-        </div>
+        <React.Fragment>
+            <UserNavbarContent userName={adminNavbarContentProps.userName}/>
+        </React.Fragment>
     );
 };
 

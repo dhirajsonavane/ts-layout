@@ -78,7 +78,7 @@ const Admin: React.FC = () => {
           }}
         >
           <div className={classes.drawerHeader}>
-            <a href="javascript:void(0)">
+            <a>
               <img className={classes.logo}
                 src={logo}
                 alt="logo"

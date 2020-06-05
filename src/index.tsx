@@ -19,7 +19,6 @@ const theme = createMuiTheme({
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
-    <React.StrictMode>
       <Router history={hist}>
         <Switch>
           <Route path="/admin" component={Admin} />
@@ -27,9 +26,8 @@ ReactDOM.render(
           <Redirect from="/" to="/admin/dashboard" />
         </Switch>
       </Router>
-    </React.StrictMode>
   </ThemeProvider>,
-  document.getElementById("root")
+  document.querySelector('#root')
 );
 
 // If you want your app to work offline and load faster, you can change
