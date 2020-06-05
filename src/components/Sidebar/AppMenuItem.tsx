@@ -81,6 +81,9 @@ const useStyles = makeStyles(theme =>
       '&.active': {
         backgroundColor: '#f6156b',
         boxShadow: "0 1px 4px 0 rgb(162, 162, 162)",
+        '& .MuiListItemIcon-root' : {
+          color: '#fff',
+        }
       },
       paddingTop: '4px',
       paddingBottom: '4px',

@@ -14,10 +14,13 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+import MoreVertIcon from '@material-ui/icons/MoreVertRounded';
+import ReorderIcon from '@material-ui/icons/ReorderRounded';
 import Typography from "@material-ui/core/Typography";
 import Drawer from "@material-ui/core/Drawer";
 import Divider from "@material-ui/core/Divider";
 import logo from '../assets/img/logo.png';
+import AdminNavbarContent from "../components/AdminNavbarContent/AdminNavbarContent";
 
 function getRoutes(_routes: any) {
   return _routes.map(
@@ -101,7 +104,7 @@ const Admin: React.FC = () => {
               edge="start"
               className={clsx(classes.menuButton, open && classes.hide)}
             >
-              <MenuIcon />
+              <ReorderIcon />
             </IconButton>
 
             <IconButton
@@ -111,8 +114,10 @@ const Admin: React.FC = () => {
               edge="start"
               className={clsx(classes.menuButton, !open && classes.hide)}
             >
-              <MenuIcon />
+              <ReorderIcon />
             </IconButton>
+
+            <AdminNavbarContent userName="Simon Washington"/>
           </Toolbar>
         </AppBar>
 
