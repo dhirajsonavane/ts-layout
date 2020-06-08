@@ -1,0 +1,31 @@
+[
+    {
+        "id": 1,
+        "direction": "Cornwall and Chestnut",
+        "location": "28.5n, 81.7w",
+        "type": "Intersection",
+        "description": "High number of speeding complaints. High accident counts."
+    },
+    {
+        "id": 2,
+        "direction": "Meridian",
+        "location": "28.5n, 80.7w",
+        "type": "Road Segment",
+        "description": "Short, high-speed weaving section with suspected high number of conflicts"
+    },
+    {
+        "id": 3,
+        "direction": "Cornwall along school",
+        "location": "24.5n, 82.7w",
+        "type": "School Zone",
+        "description": "Concerns raised by parents and school regarding 'chaos' among users at site. Need to understand risk."
+    },
+    {
+        "id": 4,
+        "direction": "Fast and Reorder",
+        "location": "30.5n, 83.7w",
+        "type": "Railroad Crossing",
+        "description": "High profile fatality in 2019, serious injury in 2020. Need to identify nature of risk and potential countermeasures."
+    }
+]
+
