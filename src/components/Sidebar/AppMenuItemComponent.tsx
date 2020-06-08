@@ -34,7 +34,6 @@ const AppMenuItemComponent: React.FC<AppMenuItemComponentProps> = props => {
     <ListItem
       button
       className={className}
-      style={{paddingTop: '0px', paddingBottom: '0px'}}
       children={children}
       component={forwardRef((props: NavLinkProps, ref: any) => <NavLink exact {...props} innerRef={ref} />)}
       to={layout + path}

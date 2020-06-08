@@ -27,7 +27,8 @@ const useStyles = makeStyles((theme) =>
     appMenu: {
       width: "100%",
       color: '#fff',
-      paddingTop: '20px'
+      marginTop: '64px',
+      overflowY: 'auto',
     },
   })
 );

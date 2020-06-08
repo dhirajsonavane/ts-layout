@@ -1,4 +1,4 @@
-import LocationList from "./views/SiteData/location-list";
+import LocationList from "./demo-pages/SiteData/location-list";
 import Login from "./views/Auth/Login";
 import Register from "./views/Auth/Register";
 
@@ -9,16 +9,16 @@ import TrendingUpIcon from "@material-ui/icons/TrendingUp";
 import ScatterPlotIcon from "@material-ui/icons/ScatterPlot";
 import PanToolIcon from "@material-ui/icons/PanToolRounded";
 
-import Dashboard from "./views/Dashboard/Dashboard";
-import EditLocation from "./views/SiteData/edit-location";
-import Flows from "./views/Data/Flows";
-import Speeds from "./views/Data/Speeds";
-import Violations from "./views/Data/Violations";
-import CrashRiskHeatMaps from "./views/Visualizations/crash-risk-heat-maps";
-import TrajectoryMaps from "./views/Visualizations/trajectory-maps";
-import VideoClips from "./views/Visualizations/video-clips";
-import CrashForecasts from "./views/Forecasts/crash-forecasts";
-import Countermeasures from "./views/Countermeasures/countermeasures";
+import Dashboard from "./demo-pages/Dashboard/Dashboard";
+import EditLocation from "./demo-pages/SiteData/edit-location";
+import Flows from "./demo-pages/Data/Flows";
+import Speeds from "./demo-pages/Data/Speeds";
+import Violations from "./demo-pages/Data/Violations";
+import CrashRiskHeatMaps from "./demo-pages/Visualizations/crash-risk-heat-maps";
+import TrajectoryMaps from "./demo-pages/Visualizations/trajectory-maps";
+import VideoClips from "./demo-pages/Visualizations/video-clips";
+import CrashForecasts from "./demo-pages/Forecasts/crash-forecasts";
+import Countermeasures from "./demo-pages/Countermeasures/countermeasures";
 
 const DrmRoutes = [
   {

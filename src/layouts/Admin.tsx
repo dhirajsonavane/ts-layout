@@ -186,6 +186,8 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: "flex-start",
       borderBottom: "1px solid #404046",
       height: 65,
+      position: 'absolute',
+      top: 0
     },
     content: {
       flexGrow: 1,

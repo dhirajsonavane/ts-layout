@@ -5,10 +5,14 @@ import Menu, { MenuProps } from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import DraftsIcon from '@material-ui/icons/Drafts';
-import SendIcon from '@material-ui/icons/Send';
 import KeyboardArrowDown from "@material-ui/icons/KeyboardArrowDown";
+import AccountTreeIcon from "@material-ui/icons/AccountTree";
+import SettingsIcon from "@material-ui/icons/Settings";
+
+import IconButton from '@material-ui/core/IconButton';
+
+import Help from '@material-ui/icons/HelpRounded';
+import LanguageRounded from '@material-ui/icons/Language';
 
 interface UserNavProps {
     userName: string
@@ -37,7 +41,7 @@ const StyledMenu = withStyles({
 const StyledMenuItem = withStyles((theme) => ({
     root: {
         minWidth: 'unset',
-        '& .MuiListItemIcon-root' : {
+        '& .MuiListItemIcon-root': {
             minWidth: 40,
         }
     },
@@ -45,11 +49,12 @@ const StyledMenuItem = withStyles((theme) => ({
 
 const useStyles = makeStyles(theme =>
     createStyles({
-      buttonCss: {
-        color: '#fff'
-      }
+        root: {
+            right: 0,
+            position: 'absolute',
+        },
     }),
-  )
+)
 
 const UserNavbarContent: React.FC<UserNavProps> = userNavProps => {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -62,17 +67,16 @@ const UserNavbarContent: React.FC<UserNavProps> = userNavProps => {
         setAnchorEl(null);
     };
 
-
     return (
-        <div>
-            <Button 
-                className={classes.buttonCss} 
-                aria-controls="simple-menu" 
-                aria-haspopup="true" 
+        <div className = {classes.root}>
+            <Button
+                className="userNameMenuBtn toolbarMenuContent"
+                aria-controls="simple-menu"
+                aria-haspopup="true"
                 onClick={handleClick}
                 endIcon={<KeyboardArrowDown />}
-                >
-                {userNavProps.userName}
+            >
+                <span className="userNameMenu">{userNavProps.userName}</span>
             </Button>
             <StyledMenu
                 id="customized-menu"
@@ -82,24 +86,24 @@ const UserNavbarContent: React.FC<UserNavProps> = userNavProps => {
                 onClose={handleClose}
             >
                 <StyledMenuItem onClick={handleClose}>
-                    <ListItemIcon>
-                        <SendIcon fontSize="small" />
-                    </ListItemIcon>
-                    <ListItemText primary="Sent mail" />
+                    <ListItemIcon> <AccountTreeIcon /> </ListItemIcon>
+                    <ListItemText primary="Walkthrough" />
                 </StyledMenuItem>
                 <StyledMenuItem onClick={handleClose}>
-                    <ListItemIcon>
-                        <DraftsIcon fontSize="small" />
-                    </ListItemIcon>
-                    <ListItemText primary="Drafts" />
-                </StyledMenuItem>
-                <StyledMenuItem onClick={handleClose}>
-                    <ListItemIcon>
-                        <InboxIcon fontSize="small" />
-                    </ListItemIcon>
-                    <ListItemText primary="Inbox" />
+                    <ListItemIcon> <SettingsIcon /> </ListItemIcon>
+                    <ListItemText primary="Settings" />
                 </StyledMenuItem>
             </StyledMenu>
+
+            <IconButton aria-label="help" className="toolbarMenuContent">
+                <Help fontSize="inherit" />
+            </IconButton>
+
+            <IconButton  aria-label="language" className="toolbarMenuContent">
+                <LanguageRounded fontSize="inherit" />
+                <KeyboardArrowDown />
+            </IconButton>
+                
         </div>
     );
 };

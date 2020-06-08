@@ -8,3 +8,22 @@ body {
 code {
   font-family: 'Titillium Web', sans-serif;
 }
+
+.userNameMenuBtn {
+  color: #fff !important;
+  justify-content: end;
+}
+
+.toolbarMenuContent {
+  color: #fff !important;
+}
+
+.userNameMenuBtn .userNameMenu {
+  color: inherit;
+}
+@media screen and (max-device-width:767px) {
+  .userNameMenuBtn .userNameMenu {
+    display: none;
+  }
+}
+
