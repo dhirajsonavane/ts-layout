@@ -57,15 +57,27 @@ const useStyles = makeStyles(theme =>
 )
 
 const UserNavbarContent: React.FC<UserNavProps> = userNavProps => {
-    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-    const classes = useStyles();
-    const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorEl(event.currentTarget);
+    const [userMenuAnchorEl, setUserMenuAnchorEl] = React.useState<null | HTMLElement>(null);
+    
+    const handleUserMenuClick = (event: React.MouseEvent<HTMLElement>) => {
+        setUserMenuAnchorEl(event.currentTarget);
     };
 
-    const handleClose = () => {
-        setAnchorEl(null);
+    const handleUserMenuClose = () => {
+        setUserMenuAnchorEl(null);
     };
+
+    const [languageMenuAnchorEl, setLanguageMenuAnchorEl] = React.useState<null | HTMLElement>(null);
+    
+    const handleLanguageMenuClick = (event: React.MouseEvent<HTMLElement>) => {
+        setLanguageMenuAnchorEl(event.currentTarget);
+    };
+
+    const handleLanguageMenuClose = () => {
+        setLanguageMenuAnchorEl(null);
+    };
+
+    const classes = useStyles();
 
     return (
         <div className = {classes.root}>
@@ -73,23 +85,23 @@ const UserNavbarContent: React.FC<UserNavProps> = userNavProps => {
                 className="userNameMenuBtn toolbarMenuContent"
                 aria-controls="simple-menu"
                 aria-haspopup="true"
-                onClick={handleClick}
+                onClick={handleUserMenuClick}
                 endIcon={<KeyboardArrowDown />}
             >
                 <span className="userNameMenu">{userNavProps.userName}</span>
             </Button>
             <StyledMenu
                 id="customized-menu"
-                anchorEl={anchorEl}
+                anchorEl={userMenuAnchorEl}
                 keepMounted
-                open={Boolean(anchorEl)}
-                onClose={handleClose}
+                open={Boolean(userMenuAnchorEl)}
+                onClose={handleUserMenuClose}
             >
-                <StyledMenuItem onClick={handleClose}>
+                <StyledMenuItem onClick={handleUserMenuClose}>
                     <ListItemIcon> <AccountTreeIcon /> </ListItemIcon>
                     <ListItemText primary="Walkthrough" />
                 </StyledMenuItem>
-                <StyledMenuItem onClick={handleClose}>
+                <StyledMenuItem onClick={handleUserMenuClose}>
                     <ListItemIcon> <SettingsIcon /> </ListItemIcon>
                     <ListItemText primary="Settings" />
                 </StyledMenuItem>
@@ -99,11 +111,33 @@ const UserNavbarContent: React.FC<UserNavProps> = userNavProps => {
                 <Help fontSize="inherit" />
             </IconButton>
 
-            <IconButton  aria-label="language" className="toolbarMenuContent">
+            <IconButton 
+                onClick={handleLanguageMenuClick} 
+                aria-label="language" 
+                className="toolbarMenuContent">
                 <LanguageRounded fontSize="inherit" />
                 <KeyboardArrowDown />
             </IconButton>
-                
+            <StyledMenu
+                id="customized-menu"
+                anchorEl={languageMenuAnchorEl}
+                keepMounted
+                open={Boolean(languageMenuAnchorEl)}
+                onClose={handleLanguageMenuClose}
+            >
+                <StyledMenuItem onClick={handleLanguageMenuClose}>
+                    <ListItemIcon> <AccountTreeIcon /> </ListItemIcon>
+                    <ListItemText primary="English" />
+                </StyledMenuItem>
+                <StyledMenuItem onClick={handleLanguageMenuClose}>
+                    <ListItemIcon> <SettingsIcon /> </ListItemIcon>
+                    <ListItemText primary="Chinese" />
+                </StyledMenuItem>
+                <StyledMenuItem onClick={handleLanguageMenuClose}>
+                    <ListItemIcon> <SettingsIcon /> </ListItemIcon>
+                    <ListItemText primary="Spanish" />
+                </StyledMenuItem>
+            </StyledMenu>    
         </div>
     );
 };
