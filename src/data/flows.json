@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "direction": "East",
+        "data": [
+            {
+                "movement": "Left",
+                "passengerVehicles": 0,
+                "motorcycles": 0,
+                "heavyVehicles": 0,
+                "crossingPedestrians": 0,
+                "bicycles": 5
+            },
+            {
+                "movement": "Right",
+                "passengerVehicles": 172,
+                "motorcycles": 12,
+                "heavyVehicles": 15,
+                "crossingPedestrians": 41,
+                "bicycles": 2
+            },
+            {
+                "movement": "Through",
+                "passengerVehicles": 40,
+                "motorcycles": 6,
+                "heavyVehicles": 2,
+                "crossingPedestrians": 0,
+                "bicycles": 5
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "direction": "West",
+        "data": [
+            {
+                "movement": "Left",
+                "passengerVehicles": 117,
+                "motorcycles": 4,
+                "heavyVehicles": 13,
+                "crossingPedestrians": 0,
+                "bicycles": 25
+            },
+            {
+                "movement": "Right",
+                "passengerVehicles": 256,
+                "motorcycles": 22,
+                "heavyVehicles": 41,
+                "crossingPedestrians": 20,
+                "bicycles": 0
+            },
+            {
+                "movement": "Through",
+                "passengerVehicles": 0,
+                "motorcycles": 1,
+                "heavyVehicles": 4,
+                "crossingPedestrians": 0,
+                "bicycles": 2
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "direction": "Southwest",
+        "data": [
+            {
+                "movement": "Left",
+                "passengerVehicles": 156,
+                "motorcycles": 4,
+                "heavyVehicles": 19,
+                "crossingPedestrians": 0,
+                "bicycles": 3
+            },
+            {
+                "movement": "Right",
+                "passengerVehicles": 149,
+                "motorcycles": 9,
+                "heavyVehicles": 13,
+                "crossingPedestrians": 12,
+                "bicycles": 14
+            },
+            {
+                "movement": "Through",
+                "passengerVehicles": 22,
+                "motorcycles": 19,
+                "heavyVehicles": 5,
+                "crossingPedestrians": 0,
+                "bicycles": 0
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "direction": "South",
+        "data": [
+            {
+                "movement": "Left",
+                "passengerVehicles": 197,
+                "motorcycles": 16,
+                "heavyVehicles": 5,
+                "crossingPedestrians": 0,
+                "bicycles": 6
+            },
+            {
+                "movement": "Right",
+                "passengerVehicles": 817,
+                "motorcycles": 4,
+                "heavyVehicles": 125,
+                "crossingPedestrians": 45,
+                "bicycles": 2
+            },
+            {
+                "movement": "Through",
+                "passengerVehicles": 13,
+                "motorcycles": 1,
+                "heavyVehicles": 12,
+                "crossingPedestrians": 0,
+                "bicycles": 13
+            }
+        ]
+    }
+]

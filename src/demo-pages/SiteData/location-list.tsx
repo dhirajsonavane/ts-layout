@@ -12,14 +12,13 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import IconButton from '@material-ui/core/IconButton';
 import EditIcon from '@material-ui/icons/Edit';
-import MoreVertRoundedIcon from '@material-ui/icons/MoreVertRounded';
 
 import data from '../../data/locations.json';
 
 const StyledTableCell = withStyles((theme: Theme) =>
   createStyles({
     head: {
-      backgroundColor: "#004a67",
+      backgroundColor: "#1c9c9c",
       color: theme.palette.common.white,
       fontWeight: 'bold'
     },
@@ -64,14 +63,7 @@ const LocationList: React.FC = () => {
                 <StyledTableCell>Location</StyledTableCell>
                 <StyledTableCell>Type</StyledTableCell>
                 <StyledTableCell>Direction</StyledTableCell>
-                <StyledTableCell>
-                  <IconButton
-                    aria-label="action"
-                    color="inherit"
-                  >
-                    <MoreVertRoundedIcon />
-                  </IconButton>
-                </StyledTableCell>
+                <StyledTableCell></StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>

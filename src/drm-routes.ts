@@ -31,7 +31,7 @@ const DrmRoutes = [
   },
   {
     collapse: true,
-    name: "SiteDataInput",
+    name: "Site Data Input",
     rtlName: "صفحات",
     Icon: PlaceIcon,
     state: "SiteDataInputCollapse",
@@ -111,7 +111,7 @@ const DrmRoutes = [
     views: [
       {
         path: "/crash-risk-heat-maps",
-        name: "CrashRiskHeatMaps",
+        name: "Crash Risk Heat Maps",
         rtlName: "عالتسعير",
         mini: "PP",
         rtlMini: "ع",
@@ -120,7 +120,7 @@ const DrmRoutes = [
       },
       {
         path: "/trajectory-maps",
-        name: "TrajectoryMaps",
+        name: "Trajectory Maps",
         rtlName: "صودعم رتل",
         mini: "RS",
         rtlMini: "صو",
@@ -147,7 +147,7 @@ const DrmRoutes = [
     views: [
       {
         path: "/crash-forecasts",
-        name: "CrashForecasts",
+        name: "Crash Forecasts",
         rtlName: "عالتسعير",
         mini: "PP",
         rtlMini: "ع",

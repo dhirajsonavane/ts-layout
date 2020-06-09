@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "direction": "Crossing 1",
+        "spatial": 5,
+        "tempora": 4
+    },
+    {
+        "id": 2,
+        "direction": "Crossing 2",
+        "spatial": 6,
+        "tempora": 3
+    },
+    {
+        "id": 3,
+        "direction": "Crossing 3",
+        "spatial": 13,
+        "tempora": 6
+    },
+    {
+        "id": 4,
+        "direction": "Crossing 4",
+        "spatial": 26,
+        "tempora": 18
+    },
+    {
+        "id": 5,
+        "direction": "Crossing 5",
+        "spatial": 6,
+        "tempora": 16
+    }
+]

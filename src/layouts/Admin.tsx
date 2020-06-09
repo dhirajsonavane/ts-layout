@@ -56,6 +56,7 @@ const Admin: React.FC = () => {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
+  const [username, setUserName] = React.useState('Simon Washington');
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -117,7 +118,7 @@ const Admin: React.FC = () => {
               <ReorderIcon />
             </IconButton>
 
-            <AdminNavbarContent userName="Simon Washington"/>
+            <AdminNavbarContent userName={username}/>
           </Toolbar>
         </AppBar>
 
