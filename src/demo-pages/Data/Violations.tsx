@@ -10,6 +10,8 @@ import Paper from '@material-ui/core/Paper';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+import Slider from '@material-ui/core/Slider';
 
 import data from '../../data/violations.json';
 
@@ -37,6 +39,11 @@ const StyledTableRow = withStyles((theme: Theme) =>
 )(TableRow);
 
 const useStyles = makeStyles({
+  sliderContainer: {
+    width: 300,
+    textAlign: 'center',
+    margin: '0 auto',
+  },
   table: {
     minWidth: 700,
   },
@@ -44,6 +51,12 @@ const useStyles = makeStyles({
 
 const Violations: React.FC = () => {
   const classes = useStyles();
+
+  const [rangeValue, setRangeValue] = React.useState<number[]>([7, 16]);
+
+  const handleRangeChange = (event: any, newValue: number | number[]) => {
+    setRangeValue(newValue as number[]);
+  };
 
   const handleDelete = (id: number) => {
     alert('Delete Successful!');
@@ -53,6 +66,19 @@ const Violations: React.FC = () => {
     <Card>
       <CardHeader title="Violations" subheader="Measured in %"></CardHeader>
       <CardContent>
+        <div className={classes.sliderContainer}>
+          <Typography id="range-slider" gutterBottom>
+            {`${rangeValue[0]}:00 - ${rangeValue[1]}:00`}
+          </Typography>
+          <Slider
+            min={0}
+            max={24}
+            value={rangeValue}
+            onChange={handleRangeChange}
+            valueLabelDisplay="auto"
+            aria-labelledby="range-slider"
+          />
+        </div>
         <TableContainer component={Paper}>
           <Table className={classes.table} aria-label="Violations">
             <TableHead>

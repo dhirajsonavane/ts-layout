@@ -13,6 +13,7 @@ import IconButton from '@material-ui/core/IconButton';
 
 import Help from '@material-ui/icons/HelpRounded';
 import LanguageRounded from '@material-ui/icons/Language';
+import FlagIcon from '@material-ui/icons/Flag';
 
 interface UserNavProps {
     userName: string
@@ -126,15 +127,15 @@ const UserNavbarContent: React.FC<UserNavProps> = userNavProps => {
                 onClose={handleLanguageMenuClose}
             >
                 <StyledMenuItem onClick={handleLanguageMenuClose}>
-                    <ListItemIcon> <AccountTreeIcon /> </ListItemIcon>
+                    <ListItemIcon> <FlagIcon /> </ListItemIcon>
                     <ListItemText primary="English" />
                 </StyledMenuItem>
                 <StyledMenuItem onClick={handleLanguageMenuClose}>
-                    <ListItemIcon> <SettingsIcon /> </ListItemIcon>
+                    <ListItemIcon> <FlagIcon /> </ListItemIcon>
                     <ListItemText primary="Chinese" />
                 </StyledMenuItem>
                 <StyledMenuItem onClick={handleLanguageMenuClose}>
-                    <ListItemIcon> <SettingsIcon /> </ListItemIcon>
+                    <ListItemIcon> <FlagIcon /> </ListItemIcon>
                     <ListItemText primary="Spanish" />
                 </StyledMenuItem>
             </StyledMenu>    

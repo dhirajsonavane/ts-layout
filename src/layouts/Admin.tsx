@@ -13,13 +13,10 @@ import clsx from "clsx";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import MoreVertIcon from '@material-ui/icons/MoreVertRounded';
 import ReorderIcon from '@material-ui/icons/ReorderRounded';
-import Typography from "@material-ui/core/Typography";
 import Drawer from "@material-ui/core/Drawer";
-import Divider from "@material-ui/core/Divider";
 import logo from '../assets/img/logo.png';
+import logo_small from '../assets/img/logo_small.png';
 import AdminNavbarContent from "../components/AdminNavbarContent/AdminNavbarContent";
 
 function getRoutes(_routes: any) {
@@ -58,12 +55,8 @@ const Admin: React.FC = () => {
   const [open, setOpen] = React.useState(true);
   const [username, setUserName] = React.useState('Simon Washington');
 
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
+  const handleDrawerClick = () => {
+    setOpen(!open);
   };
 
   return (
@@ -80,7 +73,7 @@ const Admin: React.FC = () => {
         >
           <div className={classes.drawerHeader}>
             <a>
-              <img className={classes.logo}
+              <img className={clsx(classes.logo, {[classes.hide]: !open})}
                 src={logo}
                 alt="logo"
               />
@@ -98,25 +91,24 @@ const Admin: React.FC = () => {
           })}
         >
           <Toolbar>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              onClick={handleDrawerOpen}
-              edge="start"
-              className={clsx(classes.menuButton, open && classes.hide)}
-            >
-              <ReorderIcon />
-            </IconButton>
 
-            <IconButton
-              color="inherit"
-              aria-label="close drawer"
-              onClick={handleDrawerClose}
-              edge="start"
-              className={clsx(classes.menuButton, !open && classes.hide)}
-            >
-              <ReorderIcon />
-            </IconButton>
+            <div>
+              <a>
+                <img className={clsx(classes.logo_small, {[classes.hide]: open})}
+                  src={logo_small}
+                  alt="logo"
+                />
+              </a>
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                onClick={handleDrawerClick}
+                edge="start"
+                className={clsx(classes.menuButton)}
+              >
+                <ReorderIcon />
+              </IconButton>
+            </div>
 
             <AdminNavbarContent userName={username}/>
           </Toolbar>
@@ -209,6 +201,11 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     logo: {
       width: '100%',
+    },
+    logo_small: {
+      width: '50px',
+      float: 'left',
+      marginRight: 10
     }
   })
 );

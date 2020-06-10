@@ -10,6 +10,8 @@ import Paper from '@material-ui/core/Paper';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+import Slider from '@material-ui/core/Slider';
 
 import data from '../../data/flows.json';
 
@@ -27,6 +29,11 @@ const StyledTableCell = withStyles((theme: Theme) =>
 )(TableCell);
 
 const useStyles = makeStyles({
+  sliderContainer: {
+    width: 300,
+    textAlign: 'center',
+    margin: '0 auto',
+  },
   table: {
     minWidth: 700,
   },
@@ -70,10 +77,29 @@ function getFlowsData(): flowsData[] {
 const Flows: React.FC = () => {
   const classes = useStyles();
 
+  const [rangeValue, setRangeValue] = React.useState<number[]>([7, 16]);
+
+  const handleRangeChange = (event: any, newValue: number | number[]) => {
+    setRangeValue(newValue as number[]);
+  };
+
   return (
     <Card>
       <CardHeader title="Flows" subheader="By road user, movement direction, and road user in units/hour"></CardHeader>
       <CardContent>
+      <div className={classes.sliderContainer}>
+          <Typography id="range-slider" gutterBottom>
+            {`${rangeValue[0]}:00 - ${rangeValue[1]}:00`}
+          </Typography>
+          <Slider
+            min={0}
+            max={24}
+            value={rangeValue}
+            onChange={handleRangeChange}
+            valueLabelDisplay="auto"
+            aria-labelledby="range-slider"
+          />
+        </div>
         <TableContainer component={Paper}>
           <Table className={classes.table} aria-label="Flows">
             <TableHead>
